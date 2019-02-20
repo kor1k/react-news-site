@@ -12,21 +12,27 @@ export default class NewsList extends Component {
         axios.get(API_GET_NEWS)
             .then((res) => {
                 this.setState({
-                    newList: res.data
+
+                    newList: res.data.articles
                 })
             })
     }
 
     render() {
+        const news = this.state.newsList.map((item) => {
+            return (
+                {news}
+            )
+        })
         return (
             <div>
-                <div className='row'>
+                <div className='row news-items' key={item.id}>
                     <div className='col-4 news-image'>
-
+                        <img src={item.urlToImage} alt="title"/>
                     </div>
                     <div className='col-8 news-info'>
-                        <a href="#" className="news-title">News list</a>
-                        <p className="news-short">Short news</p>
+                        <a href={item.url} className="news-title">{item.title}</a>
+                        <p className="news-short">{item.description}</p>
                     </div>
                 </div>
             </div>

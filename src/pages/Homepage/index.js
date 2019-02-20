@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {TopMenu} from "../components/TopMenu";
+import {TopMenu} from "../c";
 import '.Homepage.scss'
 
 export default class Homepage extends Component {
